@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'rake', '~> 11.2', '>= 11.2.2'
 gem 'rubocop', require: false
 
 group :test do

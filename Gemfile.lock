@@ -19,6 +19,7 @@ GEM
       ast (~> 2.2)
     powerpack (0.1.1)
     rainbow (2.1.0)
+    rake (11.2.2)
     rspec-core (3.5.2)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -47,6 +48,7 @@ PLATFORMS
 
 DEPENDENCIES
   factory_girl (~> 4.7)
+  rake (~> 11.2, >= 11.2.2)
   rspec-core
   rspec-expectations
   rubocop
