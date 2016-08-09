@@ -1,0 +1,14 @@
+<h1>
+  <em><%= "Rentals for #{@name}" -%></em>
+</h1>
+<% @rentals.each do |element| -%>
+<%= "#{element.movie.title} - #{element.charge.to_s}" %>
+<% end -%>
+<p>
+  Amount owe
+  <em><%= total_charge -%></em>
+</p>
+<p>
+  On this rental you earned
+  <em><%= frequent_renter_points -%></em>
+</p>

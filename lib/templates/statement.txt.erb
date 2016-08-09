@@ -1,0 +1,6 @@
+<%= "Rental Record for #{@name}" %>
+<% @rentals.each do |element| -%>
+<%= "#{element.movie.title} - #{element.charge.to_s}" %>
+<% end -%>
+<%= "Amount owed is #{total_charge}" %>
+<%= "You earned #{frequent_renter_points} frequent renter points" %>

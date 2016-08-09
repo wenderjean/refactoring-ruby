@@ -2,7 +2,8 @@
 describe Customer do
 
   subject { build(:customer) }
-  let (:statement) { "Rental Record for Jordan Belfort\n\tThe wolf of wall street\t30\nAmount owed is 30\nYou earned 2 frequent renter points" }
+  let (:txt_statement) { "Rental Record for Jordan Belfort\nThe wolf of wall street - 30\nAmount owed is 30\nYou earned 2 frequent renter points\n" }
+  let (:html_statement) { "<h1>\n  <em>Rentals for Jordan Belfort</em>\n</h1>\nThe wolf of wall street - 30\n<p>\n  Amount owe\n  <em>30</em>\n</p>\n<p>\n  On this rental you earned\n  <em>2</em>\n</p>\n" }
 
   describe '#name' do
     it { expect(subject.name).to eq('Jordan Belfort') }
@@ -23,8 +24,12 @@ describe Customer do
 
   describe '#statement' do
     before { subject.add_rental(build(:rental)) }
-    it 'print statement' do
-      expect(subject.statement).to eq(statement)
+    context 'when txt is returned' do
+      it { expect(subject.statement).to eq(txt_statement) }
+    end
+
+    context 'when html is returned' do
+      it { expect(subject.html_statement).to eq(html_statement) }
     end
   end
 end
